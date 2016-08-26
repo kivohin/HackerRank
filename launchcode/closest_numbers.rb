@@ -7,12 +7,16 @@ def closestNumbers(numbers)
 	arry_sorted = arry_reduced.sort
 
 	counter = 0
-	while counter < arry_sorted.length
+	while counter < arry_sorted.length - 1
 		if (arry_sorted[counter] - arry_sorted[counter + 1]).abs == 1
 			puts "#{arry_sorted[counter]} #{arry_sorted[counter + 1]}"
 		end
 
 		counter += 1
+	end
+
+	if arry_sorted[arry_sorted.length - 2] - arry_sorted[arry_sorted.length - 1] == 1
+		puts "#{arry_sorted[arry_sorted.length - 2]} #{arry_sorted[arry_sorted.length - 1]}"
 	end
 end
 
