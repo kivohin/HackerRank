@@ -15,9 +15,11 @@ def closestNumbers(numbers)
 		counter += 1
 	end
 
-	if arry_sorted[arry_sorted.length - 2] - arry_sorted[arry_sorted.length - 1] == 1
+	if arry_sorted[arry_sorted.length - 2] - arry_sorted[arry_sorted.length - 1].abs == 1
 		puts "#{arry_sorted[arry_sorted.length - 2]} #{arry_sorted[arry_sorted.length - 1]}"
 	end
 end
 
 closestNumbers([-1, -3, 0, 1, 6, 6, 4])
+print " \n"
+closestNumbers([-1, -2, -3, 0, 1, 6, 5, 4])
