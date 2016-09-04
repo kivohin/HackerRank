@@ -1,17 +1,29 @@
 function processData(input) {
-	var e = input[input.length - 1];
+  var lines = input.split("\n");
+  var n = parseInt(lines[0]);
+  var arr = lines[1].split(" ").map(function(string) {
+  	return parseInt(string);
+  });
+  // Other way of converting strings to integers
+  // var arr = lines[1].split(" ").map(Number);
 
-	for (i = array.length - 1; i < input.length; i--) {
-		if (array[i] < array[i - 1]) {
-			array[i] = array[i - 1]
+  var e = arr[n - 1];
+
+	for (var i = n - 1; i > 0 ; i--) {
+		if (e < arr[i - 1]) {
+			arr[i] = arr[i - 1];
+   		console.log(arr.toString());
+		} else {
+			arr[i] = e;
+      console.log(arr.toString());
 		};
 	};
-} 
+}  
 
-var i, array;
-array = [1, 3, 4, 2]
+var string;
+string = "5\n2 4 6 8 3"
 
-processData(array);
+processData(string);
 
 // process.stdin.resume();
 // process.stdin.setEncoding("ascii");
