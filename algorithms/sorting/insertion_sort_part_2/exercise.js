@@ -2,39 +2,39 @@ function processData(input) {
   var lines = input.split("\n");
   var n = parseInt(lines[0]);
   var arr = lines[1].split(" ").map(function(string) {
-  	return parseInt(string);
+    return parseInt(string);
   });
   // Other way of converting strings to integers
   // var arr = lines[1].split(" ").map(Number);
 
   var e = arr[n - 1];
 
-	for (var i = n - 1; i >= 0 ; i--) {
-		if (e < arr[i - 1]) {
-			arr[i] = arr[i - 1];
-   		var result = "";
-   		arr.forEach(function(num) {
-   			result = result + num.toString() + " ";
-   		});
-   		console.log(result);
-		}
-		else if (e > arr[i - 1] && e < arr[i + 1]) {
-			arr[i] = e;
-			result = "";
-			arr.forEach(function(num) {
-   			result = result + num.toString() + " ";
-   		});
+  for (var i = n - 1; i >= 0 ; i--) {
+    if (e < arr[i - 1]) {
+      arr[i] = arr[i - 1];
+      var result = "";
+      arr.forEach(function(num) {
+        result = result + num.toString() + " ";
+      });
       console.log(result);
-		}
-		else if (e < arr[i + 1]) {
-			arr[i] = e;
-			result = "";
-			arr.forEach(function(num) {
-   			result = result + num.toString() + " ";
-   		});
+    }
+    else if (e > arr[i - 1] && e < arr[i + 1]) {
+      arr[i] = e;
+      result = "";
+      arr.forEach(function(num) {
+        result = result + num.toString() + " ";
+      });
       console.log(result);
-		};
-	};
+    }
+    else if (e < arr[i + 1]) {
+      arr[i] = e;
+      result = "";
+      arr.forEach(function(num) {
+        result = result + num.toString() + " ";
+      });
+      console.log(result);
+    };
+  };
 }
 
 var string;
